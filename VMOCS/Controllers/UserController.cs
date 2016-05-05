@@ -4,6 +4,7 @@ using System.Net;
 using System.Web.Mvc;
 using VMOCS.DAL;
 using VMOCS.Models;
+using Postal;
 
 namespace VMOCS.Controllers
 {
@@ -49,6 +50,12 @@ namespace VMOCS.Controllers
             {
                 db.Users.Add(user);
                 db.SaveChanges();
+
+                dynamic email = new Email("UserAdded");
+                email.To = "geomark@gmail.com";
+                email.Body = "A new user has just been added.";
+                email.Send();
+
                 return RedirectToAction("Index");
             }
 
