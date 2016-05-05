@@ -179,6 +179,14 @@
     <Compile Include="Migrations\201605051735401_User-Email.Designer.cs">
       <DependentUpon>201605051735401_User-Email.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605052127371_GM01.cs" />
+    <Compile Include="Migrations\201605052127371_GM01.Designer.cs">
+      <DependentUpon>201605052127371_GM01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605052128429_GM02.cs" />
+    <Compile Include="Migrations\201605052128429_GM02.Designer.cs">
+      <DependentUpon>201605052128429_GM02.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\User.cs" />
@@ -228,11 +236,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Company\Create.cshtml" />
-    <Content Include="Views\Company\Delete.cshtml" />
-    <Content Include="Views\Company\Details.cshtml" />
-    <Content Include="Views\Company\Edit.cshtml" />
-    <Content Include="Views\Company\Index.cshtml" />
     <Content Include="Views\Emails\_ViewStart.cshtml" />
     <Content Include="Views\Emails\Web.config" />
     <Content Include="Views\Emails\UserAdded.cshtml" />
@@ -247,6 +250,11 @@
     <Content Include="Views\User\Details.cshtml" />
     <Content Include="Views\User\Edit.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Company\Create.cshtml" />
+    <Content Include="Views\Company\Delete.cshtml" />
+    <Content Include="Views\Company\Details.cshtml" />
+    <Content Include="Views\Company\Edit.cshtml" />
+    <Content Include="Views\Company\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -265,6 +273,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605051735401_User-Email.resx">
       <DependentUpon>201605051735401_User-Email.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605052127371_GM01.resx">
+      <DependentUpon>201605052127371_GM01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605052128429_GM02.resx">
+      <DependentUpon>201605052128429_GM02.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

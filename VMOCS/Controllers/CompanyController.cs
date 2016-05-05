@@ -1,6 +1,10 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
 using VMOCS.DAL;
 using VMOCS.Models;
@@ -45,7 +49,7 @@ namespace VMOCS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CompanyID,UserID,CompanyName,Username,Password")] Company company)
+        public ActionResult Create([Bind(Include = "CompanyID,UserID,CompanyName,Username,Password,Account")] Company company)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +83,7 @@ namespace VMOCS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CompanyID,UserID,CompanyName,Username,Password")] Company company)
+        public ActionResult Edit([Bind(Include = "CompanyID,UserID,CompanyName,Username,Password,Account")] Company company)
         {
             if (ModelState.IsValid)
             {

@@ -13,6 +13,7 @@ namespace VMOCS.Models
         public string CompanyName { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
+        public string Account { get; set; }
 
         public virtual User User { get; set; }
     }

@@ -55,21 +55,18 @@ namespace VMOCS.Controllers
                             string user = v.Username.ToString();
                             Session["CompanyName"] = v.CompanyName.ToString();
                             Session["LoggedUserID"] = v.UserID.ToString();
+                            Session["AccountNumber"] = v.Account.ToString();
                             Session["LoggedUsername"] = user;
 
                             switch (user)
                             {
                                 case "mdxl":
-                                    Session["AccountNumber"] = "5712270411";
                                     return RedirectToAction("Mdxl");
                                 case "threefountainsadmin":
-                                    Session["AccountNumber"] = "2603106147";
                                     return View("ThreeFountains");
                                 case "chesapeake":
-                                    Session["AccountNumber"] = "4109724471";
                                     return View("Chesapeake");
                                 case "admin":
-                                    Session["AccountNumber"] = "9999";
                                     return View("Admin");
                                 default:
                                     break;
@@ -137,7 +134,7 @@ namespace VMOCS.Controllers
                 FileInfo info = new FileInfo(filePath);
                 using (StreamWriter writer = info.CreateText())
                 {
-                    writer.WriteLine("amodify om=" + Session["AccountNumber"].ToString() + " pn1=" + notify1 + " an1=" + notify2 + " an2=" + notify3);
+                    writer.WriteLine("amodify om=" + Session["Account"] + " pn1=" + notify1 + " an1=" + notify2 + " an2=" + notify3);
                     writer.WriteLine(" ");
                     writer.Flush();
                     writer.Close();
