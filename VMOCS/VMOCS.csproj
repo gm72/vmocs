@@ -175,17 +175,9 @@
     <Compile Include="Migrations\201605042325464_InitialCreate.Designer.cs">
       <DependentUpon>201605042325464_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201605051735401_User-Email.cs" />
-    <Compile Include="Migrations\201605051735401_User-Email.Designer.cs">
-      <DependentUpon>201605051735401_User-Email.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605052127371_GM01.cs" />
-    <Compile Include="Migrations\201605052127371_GM01.Designer.cs">
-      <DependentUpon>201605052127371_GM01.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605052128429_GM02.cs" />
-    <Compile Include="Migrations\201605052128429_GM02.Designer.cs">
-      <DependentUpon>201605052128429_GM02.cs</DependentUpon>
+    <Compile Include="Migrations\201605052209320_Initial-SST.cs" />
+    <Compile Include="Migrations\201605052209320_Initial-SST.Designer.cs">
+      <DependentUpon>201605052209320_Initial-SST.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Company.cs" />
@@ -271,14 +263,8 @@
     <EmbeddedResource Include="Migrations\201605042325464_InitialCreate.resx">
       <DependentUpon>201605042325464_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605051735401_User-Email.resx">
-      <DependentUpon>201605051735401_User-Email.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605052127371_GM01.resx">
-      <DependentUpon>201605052127371_GM01.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605052128429_GM02.resx">
-      <DependentUpon>201605052128429_GM02.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201605052209320_Initial-SST.resx">
+      <DependentUpon>201605052209320_Initial-SST.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -7,7 +7,7 @@ namespace VMOCS.DAL
     public class ApplicationContext : DbContext
     {
     
-        public ApplicationContext() : base("ApplicationContext")
+        public ApplicationContext() : base("VMOCS")
         {
         }
         

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -7,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using VMOCS.DAL;
 using VMOCS.Models;
+using Postal;
 
 namespace VMOCS.Controllers
 {
@@ -140,8 +142,8 @@ namespace VMOCS.Controllers
                     writer.Close();
                 }
 
-                //ftpfile("12.182.40.70", @"/" + filename, filePath, "ftp1", "just4george");
-                //ftpfile("ftp.silverstatetelecom.com", @"/" + filename, filePath, ConfigurationManager.AppSettings["FtpAccount"].ToString(), ConfigurationManager.AppSettings["FtpPassword"].ToString());
+                ftpfile("12.182.40.70", @"/" + filename, filePath, "ftp1", "just4george");
+                ftpfile("ftp.silverstatetelecom.com", @"/" + filename, filePath, ConfigurationManager.AppSettings["FtpAccount"].ToString(), ConfigurationManager.AppSettings["FtpPassword"].ToString());
 
                 string message = string.Empty;
 
@@ -157,10 +159,14 @@ namespace VMOCS.Controllers
                 Session["Message"] = message;
                 Session["notify1"] = notify1;
                 Session["timestamp"] = DateTime.Now;
+
+                //send mail
+                dynamic email = new Email("Processed");
+                email.To = ConfigurationManager.AppSettings["AdminEmail"].ToString();
+                email.Body = message;
+                email.Send();
             }
-
-            //send mail to do
-
+            
             return View("AccountHome");
         }
 
