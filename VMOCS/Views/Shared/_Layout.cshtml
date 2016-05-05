@@ -23,10 +23,11 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                  
+                 @if (Session["LoggedUsername"] != null && Session["LoggedUsername"].ToString() == "admin")
+                 {
                         <li>@Html.ActionLink("Company", "Index", "Company")</li>
                         <li>@Html.ActionLink("User", "Index", "User")</li>
-                    
+                  }
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">

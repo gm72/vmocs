@@ -1,10 +1,13 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
 using VMOCS.DAL;
 using VMOCS.Models;
-using Postal;
 
 namespace VMOCS.Controllers
 {
@@ -44,18 +47,12 @@ namespace VMOCS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,Number")] User user)
+        public ActionResult Create([Bind(Include = "ID,Name,Number,Email")] User user)
         {
             if (ModelState.IsValid)
             {
                 db.Users.Add(user);
                 db.SaveChanges();
-
-                dynamic email = new Email("UserAdded");
-                email.To = "geomark@gmail.com";
-                email.Body = "A new user has just been added.";
-                email.Send();
-
                 return RedirectToAction("Index");
             }
 
@@ -82,7 +79,7 @@ namespace VMOCS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name,Number")] User user)
+        public ActionResult Edit([Bind(Include = "ID,Name,Number,Email")] User user)
         {
             if (ModelState.IsValid)
             {

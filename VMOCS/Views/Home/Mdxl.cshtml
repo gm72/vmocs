@@ -1,6 +1,6 @@
-﻿@model IEnumerable<VMOCS_MVC.Models.MDXL_FORWARDS>
+﻿@model IEnumerable<VMOCS.Models.User>
 
-@using VMOCS_MVC.Models;
+@using VMOCS.Models;
 
 @{
     ViewBag.Title = "Mdxl";
@@ -16,6 +16,8 @@
         <div class="form-group">
             <div class="col-md-10">
                 Switch on call attendant to: @Html.DropDownList("SelectedNumbers", "--Select--")
+
+                
 
               
                
