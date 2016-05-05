@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Chesapeake";
+}
+
+<h2>@Session["CompanyName"].ToString()</h2>
+
+<h3>@ViewBag.Message</h3>
+
+<form action="Process" method="POST">
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <div class="form-group">
+            <div class="col-md-10">
+                Notify this number as soon as message is left: <input type="text" placeholder="7035551212" id="notify1" name="notify1">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                5 Minutes later notify this number: <input type="text" placeholder="7035551212" id="notify2" name="notify2">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                10 Minutes later notify this number: <input type="text" placeholder="7035551212" id="notify3" name="notify3">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Submit" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+</form>
+
+

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<VMOCS_MVC.Models.MDXL_FORWARDS>
+
+@using VMOCS_MVC.Models;
+
+@{
+    ViewBag.Title = "Mdxl";
+}
+
+<h2>@Session["CompanyName"].ToString()</h2>
+
+<h3>@ViewBag.Message</h3>
+
+<form action="Process" method="POST">
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <div class="form-group">
+            <div class="col-md-10">
+                Switch on call attendant to: @Html.DropDownList("SelectedNumbers", "--Select--")
+
+              
+               
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                Input override number here: <input type="text" placeholder="7025551212" id="notify1" name="notify1">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                <div class="radio">
+                    <label>
+                        <input type="checkbox" id="rbReceipt"> Check if you would like a receipt by email
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Submit" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+</form>
+
+
+
