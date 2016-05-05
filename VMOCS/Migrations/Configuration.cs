@@ -10,7 +10,6 @@ namespace VMOCS.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "VMOCS.DAL.ApplicationContext";
         }
 
         protected override void Seed(VMOCS.DAL.ApplicationContext context)

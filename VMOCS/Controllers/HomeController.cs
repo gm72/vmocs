@@ -56,7 +56,7 @@ namespace VMOCS.Controllers
                         {
                             string user = v.Username.ToString();
                             Session["CompanyName"] = v.CompanyName.ToString();
-                            Session["LoggedUserID"] = v.UserID.ToString();
+                            Session["LoggedUserID"] = v.CompanyID.ToString();
                             Session["AccountNumber"] = v.Account.ToString();
                             Session["LoggedUsername"] = user;
 

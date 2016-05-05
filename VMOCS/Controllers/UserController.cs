@@ -18,7 +18,8 @@ namespace VMOCS.Controllers
         // GET: User
         public ActionResult Index()
         {
-            return View(db.Users.ToList());
+            var users = db.Users.Include(u => u.Company);
+            return View(users.ToList());
         }
 
         // GET: User/Details/5
@@ -39,6 +40,7 @@ namespace VMOCS.Controllers
         // GET: User/Create
         public ActionResult Create()
         {
+            ViewBag.CompanyID = new SelectList(db.Companies, "CompanyID", "CompanyName");
             return View();
         }
 
@@ -47,7 +49,7 @@ namespace VMOCS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,Number,Email")] User user)
+        public ActionResult Create([Bind(Include = "ID,CompanyID,Name,Number,Email")] User user)
         {
             if (ModelState.IsValid)
             {
@@ -56,6 +58,7 @@ namespace VMOCS.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.CompanyID = new SelectList(db.Companies, "CompanyID", "CompanyName", user.CompanyID);
             return View(user);
         }
 
@@ -71,6 +74,7 @@ namespace VMOCS.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.CompanyID = new SelectList(db.Companies, "CompanyID", "CompanyName", user.CompanyID);
             return View(user);
         }
 
@@ -79,7 +83,7 @@ namespace VMOCS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name,Number,Email")] User user)
+        public ActionResult Edit([Bind(Include = "ID,CompanyID,Name,Number,Email")] User user)
         {
             if (ModelState.IsValid)
             {
@@ -87,6 +91,7 @@ namespace VMOCS.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.CompanyID = new SelectList(db.Companies, "CompanyID", "CompanyName", user.CompanyID);
             return View(user);
         }
 

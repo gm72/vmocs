@@ -7,13 +7,13 @@ namespace VMOCS.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Rollback1 : IMigrationMetadata
+    public sealed partial class _001 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Rollback1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(_001));
         
         string IMigrationMetadata.Id
         {
-            get { return "201605051844354_Rollback-1"; }
+            get { return "201605052338469_001"; }
         }
         
         string IMigrationMetadata.Source

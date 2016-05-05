@@ -171,13 +171,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201605042325464_InitialCreate.cs" />
-    <Compile Include="Migrations\201605042325464_InitialCreate.Designer.cs">
-      <DependentUpon>201605042325464_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605052209320_Initial-SST.cs" />
-    <Compile Include="Migrations\201605052209320_Initial-SST.Designer.cs">
-      <DependentUpon>201605052209320_Initial-SST.cs</DependentUpon>
+    <Compile Include="Migrations\201605052338469_001.cs" />
+    <Compile Include="Migrations\201605052338469_001.Designer.cs">
+      <DependentUpon>201605052338469_001.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Company.cs" />
@@ -202,6 +198,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\sst.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -237,16 +234,16 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Mdxl.cshtml" />
     <Content Include="Views\Home\ThreeFountains.cshtml" />
-    <Content Include="Views\User\Create.cshtml" />
-    <Content Include="Views\User\Delete.cshtml" />
-    <Content Include="Views\User\Details.cshtml" />
-    <Content Include="Views\User\Edit.cshtml" />
-    <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Company\Create.cshtml" />
     <Content Include="Views\Company\Delete.cshtml" />
     <Content Include="Views\Company\Details.cshtml" />
     <Content Include="Views\Company\Edit.cshtml" />
     <Content Include="Views\Company\Index.cshtml" />
+    <Content Include="Views\User\Create.cshtml" />
+    <Content Include="Views\User\Delete.cshtml" />
+    <Content Include="Views\User\Details.cshtml" />
+    <Content Include="Views\User\Edit.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -260,11 +257,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201605042325464_InitialCreate.resx">
-      <DependentUpon>201605042325464_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605052209320_Initial-SST.resx">
-      <DependentUpon>201605052209320_Initial-SST.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201605052338469_001.resx">
+      <DependentUpon>201605052338469_001.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

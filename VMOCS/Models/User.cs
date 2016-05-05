@@ -10,6 +10,7 @@ namespace VMOCS.Models
     public class User
     {
         public int ID { get; set; }
+        public int CompanyID { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]
@@ -17,7 +18,7 @@ namespace VMOCS.Models
         [Required]
         public string Email { get; set; }
 
-        public virtual ICollection<Company> Companies { get; set; }
-        
+        public virtual Company Company { get; set; }
+
     }
 }

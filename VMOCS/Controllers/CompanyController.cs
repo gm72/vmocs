@@ -18,8 +18,7 @@ namespace VMOCS.Controllers
         // GET: Company
         public ActionResult Index()
         {
-            var companies = db.Companies.Include(c => c.User);
-            return View(companies.ToList());
+            return View(db.Companies.ToList());
         }
 
         // GET: Company/Details/5
@@ -40,7 +39,6 @@ namespace VMOCS.Controllers
         // GET: Company/Create
         public ActionResult Create()
         {
-            ViewBag.UserID = new SelectList(db.Users, "ID", "Name");
             return View();
         }
 
@@ -49,7 +47,7 @@ namespace VMOCS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CompanyID,UserID,CompanyName,Username,Password,Account")] Company company)
+        public ActionResult Create([Bind(Include = "CompanyID,CompanyName,Username,Password,Account")] Company company)
         {
             if (ModelState.IsValid)
             {
@@ -58,7 +56,6 @@ namespace VMOCS.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.UserID = new SelectList(db.Users, "ID", "Name", company.UserID);
             return View(company);
         }
 
@@ -74,7 +71,6 @@ namespace VMOCS.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.UserID = new SelectList(db.Users, "ID", "Name", company.UserID);
             return View(company);
         }
 
@@ -83,7 +79,7 @@ namespace VMOCS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CompanyID,UserID,CompanyName,Username,Password,Account")] Company company)
+        public ActionResult Edit([Bind(Include = "CompanyID,CompanyName,Username,Password,Account")] Company company)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +87,6 @@ namespace VMOCS.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.UserID = new SelectList(db.Users, "ID", "Name", company.UserID);
             return View(company);
         }
 
